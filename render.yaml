@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: posts-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        fromDatabase:
+          name: supabase-url
+          property: connectionString
+      - key: SUPABASE_KEY
+        fromDatabase:
+          name: supabase-key
+          property: connectionString
