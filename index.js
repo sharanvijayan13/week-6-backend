@@ -411,7 +411,7 @@ app.use(errorHandler);
  * @type {number} Port number for the server
  */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 /**
  * Start the Express server
@@ -429,7 +429,7 @@ app.listen(PORT, () => {
   console.log("=".repeat(50));
 });
 
-/**
+/*
  * Graceful shutdown handler
  * Handles process termination signals for clean server shutdown
  */
@@ -446,7 +446,7 @@ process.on("SIGINT", () => {
 // ==================== EXPORTS ====================
 
 /**
- * Export the Express app for testing purposes
+ * Export the Express app for testing purpose
  * @type {express.Application}
  */
 export default app;
