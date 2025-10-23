@@ -380,11 +380,11 @@ app.get(
 
 // ==================== ERROR HANDLING ====================
 
-/**
+/*
  * Handle 404 errors for undefined routes
  * This middleware should be placed after all route definitions
  */
-app.use("*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     success: false,
     error: "Route not found",
@@ -398,7 +398,7 @@ app.use("*", (req, res) => {
   });
 });
 
-/**
+/*
  * Global error handling middleware
  * This should be the last middleware in the stack
  */
@@ -410,6 +410,7 @@ app.use(errorHandler);
  * Server configuration
  * @type {number} Port number for the server
  */
+
 const PORT = process.env.PORT || 5000;
 
 /**
